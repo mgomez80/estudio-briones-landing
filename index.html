@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estudio Briones | Estudio Jurídico — Salta</title>
+<meta name="description" content="Estudio Briones — Asesoramiento legal integral en Salta. Derecho civil, comercial, laboral y familia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --ink: #1a1a2e;
+    --paper: #f8f7f4;
+    --accent: #2c4a6e;
+    --accent-light: #3d6a96;
+    --warm: #8b7355;
+    --warm-light: #c4b49a;
+    --text: #3a3a4a;
+    --text-muted: #6b6b7b;
+    --border: #d8d5ce;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    color: var(--text);
+    background: var(--paper);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(248, 247, 244, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+    padding: 0.9rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-brand {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.25rem;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem 2rem 4rem;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--warm);
+    letter-spacing: 0.08em;
+    margin-bottom: 1.2rem;
+  }
+
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.4rem, 5.5vw, 3.6rem);
+    color: var(--ink);
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+    max-width: 700px;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 540px;
+    line-height: 1.7;
+    margin-bottom: 2.2rem;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    padding: 0.85rem 1.8rem;
+    border-radius: 6px;
+    font-size: 0.92rem;
+    font-weight: 500;
+    transition: background 0.2s;
+    width: fit-content;
+  }
+
+  .hero-cta:hover { background: var(--accent-light); }
+
+  /* ── DIVIDER ── */
+  .divider {
+    width: 48px;
+    height: 2px;
+    background: var(--warm-light);
+    margin: 0 auto;
+  }
+
+  /* ── AREAS ── */
+  .areas {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+  }
+
+  .areas h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.8rem;
+    color: var(--ink);
+    margin-bottom: 0.6rem;
+  }
+
+  .areas > p {
+    color: var(--text-muted);
+    margin-bottom: 3rem;
+    max-width: 500px;
+  }
+
+  .areas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .area-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem 1.6rem;
+    transition: border-color 0.2s;
+  }
+
+  .area-card:hover { border-color: var(--accent); }
+
+  .area-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--accent);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+    color: #fff;
+    font-size: 1.1rem;
+  }
+
+  .area-card h3 {
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+  }
+
+  .area-card p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* ── ABOUT ── */
+  .about {
+    background: #fff;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .about-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .about h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.8rem;
+    color: var(--ink);
+    margin-bottom: 1.2rem;
+  }
+
+  .about p {
+    color: var(--text-muted);
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+
+  .about-values {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .value-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .value-dot {
+    min-width: 8px;
+    height: 8px;
+    background: var(--warm);
+    border-radius: 50%;
+    margin-top: 0.55rem;
+  }
+
+  .value-item h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.15rem;
+  }
+
+  .value-item p {
+    font-size: 0.88rem;
+    margin: 0;
+  }
+
+  /* ── CONTACT ── */
+  .contact {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+  }
+
+  .contact h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.8rem;
+    color: var(--ink);
+    margin-bottom: 0.6rem;
+  }
+
+  .contact > p {
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .contact-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .contact-icon {
+    min-width: 44px;
+    height: 44px;
+    background: var(--accent);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.1rem;
+  }
+
+  .contact-item h4 {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-bottom: 0.15rem;
+  }
+
+  .contact-item a,
+  .contact-item span {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .contact-item a:hover { color: var(--accent); }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+  }
+
+  footer .brand {
+    font-family: 'DM Serif Display', serif;
+    color: var(--ink);
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 700px) {
+    .nav-links { display: none; }
+    .hero { padding: 7rem 1.5rem 3rem; min-height: 80vh; }
+    .about-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .areas, .contact { padding: 3.5rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-brand">Estudio Briones</a>
+  <ul class="nav-links">
+    <li><a href="#areas">Áreas de práctica</a></li>
+    <li><a href="#estudio">El estudio</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-eyebrow">Estudio Jurídico en Salta</div>
+  <h1>Asesoramiento legal con compromiso y cercanía</h1>
+  <p>Acompañamos a nuestros clientes con soluciones jurídicas efectivas, priorizando la comunicación clara y la atención personalizada en cada caso.</p>
+  <a href="#contacto" class="hero-cta">
+    Consultá sin compromiso
+    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </a>
+</section>
+
+<div class="divider"></div>
+
+<section class="areas" id="areas">
+  <h2>Áreas de práctica</h2>
+  <p>Brindamos asesoramiento integral en las principales ramas del derecho.</p>
+  <div class="areas-grid">
+    <div class="area-card">
+      <div class="area-icon">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 21h18M9 8h6M9 12h6M9 16h6M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16"/></svg>
+      </div>
+      <h3>Derecho civil</h3>
+      <p>Contratos, responsabilidad civil, sucesiones, propiedad y derechos reales.</p>
+    </div>
+    <div class="area-card">
+      <div class="area-icon">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </div>
+      <h3>Derecho comercial</h3>
+      <p>Constitución de sociedades, contratos comerciales y recupero de créditos.</p>
+    </div>
+    <div class="area-card">
+      <div class="area-icon">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+      </div>
+      <h3>Derecho laboral</h3>
+      <p>Asesoramiento a empleadores y trabajadores, despidos, accidentes laborales.</p>
+    </div>
+    <div class="area-card">
+      <div class="area-icon">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg>
+      </div>
+      <h3>Derecho de familia</h3>
+      <p>Divorcios, alimentos, régimen de comunicación, adopción y filiación.</p>
+    </div>
+    <div class="area-card">
+      <div class="area-icon">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <h3>Derecho penal</h3>
+      <p>Defensa penal, querellas y representación en procesos penales.</p>
+    </div>
+    <div class="area-card">
+      <div class="area-icon">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+      </div>
+      <h3>Mediación</h3>
+      <p>Resolución alternativa de conflictos con enfoque conciliador y eficiente.</p>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="estudio">
+  <div class="about-inner">
+    <div>
+      <h2>Sobre el estudio</h2>
+      <p>Estudio Briones es un estudio jurídico con sede en la ciudad de Salta, dedicado a brindar asesoramiento legal integral a personas y empresas.</p>
+      <p>Trabajamos con un enfoque centrado en el cliente, entendiendo que cada situación es única y requiere una estrategia a medida.</p>
+    </div>
+    <div class="about-values">
+      <div class="value-item">
+        <div class="value-dot"></div>
+        <div>
+          <h4>Atención personalizada</h4>
+          <p>Cada caso recibe dedicación individual y seguimiento constante.</p>
+        </div>
+      </div>
+      <div class="value-item">
+        <div class="value-dot"></div>
+        <div>
+          <h4>Comunicación clara</h4>
+          <p>Mantenemos a nuestros clientes informados en cada etapa del proceso.</p>
+        </div>
+      </div>
+      <div class="value-item">
+        <div class="value-dot"></div>
+        <div>
+          <h4>Compromiso con resultados</h4>
+          <p>Buscamos soluciones concretas con la mejor estrategia legal disponible.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contacto">
+  <h2>Contacto</h2>
+  <p>Estamos a disposición para atender tu consulta.</p>
+  <div class="contact-grid">
+    <div class="contact-item">
+      <div class="contact-icon">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      </div>
+      <div>
+        <h4>Teléfono</h4>
+        <a href="tel:+5493873142412">+54 9 3873 14-2412</a>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+      </div>
+      <div>
+        <h4>Email</h4>
+        <a href="mailto:estudiobriones125@gmail.com">estudiobriones125@gmail.com</a>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div>
+        <h4>Ubicación</h4>
+        <span>Salta Capital, Argentina</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="brand">Estudio Briones</div>
+  <p>&copy; 2026 Estudio Briones. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>
